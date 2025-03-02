@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #2E3440;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.contenedor {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    gap: 20px;
+}
+
+.panel-izquierdo {
+    background-color: #3B4252;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+}
+
+.busqueda {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+
+#mensaje-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px; 
+    display: none; 
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #88C0D0;
+    color: #2E3440;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #81A1C1;
+}
+
+.panel-derecho {
+    background-color: #434C5E;
+    padding: 20px;
+    border-radius: 15px;
+    flex: 2;
+}
+
+#clima-actual, #pronostico-clima {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarjeta-clima {
+    background-color: #4C566A;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.tarjeta-clima img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#pronostico-clima {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .panel-izquierdo, .panel-derecho {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .busqueda {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #pronostico-clima {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-clima {
+        padding: 15px;
+    }
+
+    label {
+        display: block;
+        margin-top: 130px;
+        margin-bottom: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    #pronostico-clima {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .tarjeta-clima {
+        font-size: 14px; /* Reducir el tamaño de la fuente */
+        padding: 10px; /* Reducir el padding */
+    }
+}
