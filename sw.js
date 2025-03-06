@@ -11,6 +11,12 @@ const URLS_TO_CACHE = [
     './icons/Parcialmente-Nublado.png',
     './icons/Tormenta.png',
     './manifest.json',
+    './vid/despejado.mp4',
+    './vid/fondo.mp4',
+    './vid/lluvioso.mp4',
+    './vid/nevado.mp4',
+    './vid/Nublado.mp4',
+    './vid/tormenta.mp4',
 ];
 
 self.addEventListener('install', event => {
