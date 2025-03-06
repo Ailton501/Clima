@@ -76,3 +76,14 @@ self.addEventListener('fetch', event => {
             .catch(() => caches.match('./index.html')) 
     );
 });
+
+self.addEventListener('push', event => {
+    const options = {
+        body: '¡Nueva actualización del clima!',
+        icon: './icons/Nublado.png',
+        badge: './icons/Nublado.png'
+    };
+    event.waitUntil(
+        self.registration.showNotification('Notificación del Clima', options)
+    );
+});
