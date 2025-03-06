@@ -97,6 +97,20 @@ function mostrarPronostico(data) {
     });
 }
 
+if ('Notification' in window && 'serviceWorker' in navigator) {
+    Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+            navigator.serviceWorker.ready.then(registration => {
+                registration.showNotification('¡Notificaciones activadas!', {
+                    body: 'Recibirás actualizaciones sobre el clima.',
+                    icon: './icons/Nublado.png',
+                });
+            });
+        }
+    });
+}
+
+
 // Función para mostrar un mensaje de error
 function mostrarError() {
     const climaActual = document.getElementById('clima-actual');
